@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>QUẢN LÝ SINH VIÊN</h1>
+    <div id="container">
+        <button id="toggleFormButton">Thêm sinh viên</button>
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Mã sinh viên</th>
+                    <th>Tên</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Địa chỉ</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="floatingForm">
+            <h2>Thêm Sinh Viên</h2>
+            <form id="studentForm">
+                <label for="studentId">ID:</label>
+                <input type="text" id="studentId" required><br>
+                <label for="studentName">Tên:</label>
+                <input type="text" id="studentName" required><br>
+                <label for="studentGender">Giới tính:</label>
+                <input type="text" id="studentGender" required><br>
+                <label for="studentDob">Ngày sinh:</label>
+                <input type="date" id="studentDob" required><br>
+                <label for="studentAddress">Địa chỉ:</label>
+                <input type="text" id="studentAddress" required><br>
+                <button type="submit">Thêm sinh viên</button>
+            </form>
+        </div>
+    </div>    
+    <script src="script.js"></script>
+</body>
+</html>
