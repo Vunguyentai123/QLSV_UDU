@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function Task({ task, onToggleComplete }) {
+function Task({ task, onToggleComplete, onDelete }) {
     return (
         <div className="task">
             <div>
                 <p>{task.text}</p>
                 <p className="text-sm text-gray-600">Deadline: {task.deadline}</p>
             </div>
-            <button onClick={onToggleComplete} className={task.completed ? 'completed' : ''}>
-                {task.completed ? '✔️' : '❌'}
-            </button>
+            <div>
+                <button onClick={onToggleComplete} className={task.completed ? 'completed' : ''}>
+                    {task.completed ? '✔️' : '❌'}
+                </button>
+                <button onClick={onDelete} className="delete-button">🗑️</button>
+            </div>
         </div>
     );
 }
@@ -54,6 +57,11 @@ export default function TodoList() {
         setTasks(newTasks);
     };
 
+    const deleteTask = (index) => {
+        const newTasks = tasks.filter((_, i) => i !== index);
+        setTasks(newTasks);
+    };
+
     return (
         <div className="TodoList">
             <h1>Todo List</h1>
@@ -73,7 +81,12 @@ export default function TodoList() {
             </form>
             <div className="task-list">
                 {tasks.map((task, index) => (
-                    <Task key={index} task={task} onToggleComplete={() => toggleCompleteTask(index)} />
+                    <Task
+                        key={index}
+                        task={task}
+                        onToggleComplete={() => toggleCompleteTask(index)}
+                        onDelete={() => deleteTask(index)}
+                    />
                 ))}
             </div>
         </div>
