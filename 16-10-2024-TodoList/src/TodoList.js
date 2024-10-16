@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function Task({ task, onToggleComplete }) {
@@ -16,9 +16,18 @@ function Task({ task, onToggleComplete }) {
 }
 
 export default function TodoList() {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(() => {
+        // Lấy danh sách nhiệm vụ từ localStorage khi khởi tạo
+        const savedTasks = localStorage.getItem('tasks');
+        return savedTasks ? JSON.parse(savedTasks) : [];
+    });
     const [newTask, setNewTask] = useState("");
     const [deadline, setDeadline] = useState("");
+
+    useEffect(() => {
+        // Lưu danh sách nhiệm vụ vào localStorage mỗi khi danh sách thay đổi
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }, [tasks]);
 
     const addTask = (e) => {
         e.preventDefault();
