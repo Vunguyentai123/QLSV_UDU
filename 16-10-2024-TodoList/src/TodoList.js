@@ -38,8 +38,8 @@ export default function TodoList() {
             const newTaskObj = {
                 text: newTask,
                 deadline: deadline,
-                color: "#f9f9f9", // Màu mặc định cho nhiệm vụ mới
-                completed: false // Trạng thái hoàn thành mặc định là false
+                color: "#f9f9f9",
+                completed: false
             };
             setTasks([...tasks, newTaskObj]);
             setNewTask("");
