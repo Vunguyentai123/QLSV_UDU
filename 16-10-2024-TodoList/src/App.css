@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+.TodoList {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.TodoList h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.TodoList form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.TodoList form input[type="text"],
+.TodoList form input[type="datetime-local"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.TodoList form button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.TodoList form button:hover {
+  background-color: #e64a45;
+  transform: scale(1.05);
+}
+
+.TodoList .task-list {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.TodoList .task {
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.TodoList .task:hover {
+  background-color: #f1f1f1;
+}
+
+.TodoList .task p {
+  margin: 0;
+  color: #333;
+}
+
+.TodoList .task button {
+  background-color: transparent;
+  border: 2px solid #28a745;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #28a745;
+  transition: color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.TodoList .task button.completed {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.TodoList .task button:hover {
+  transform: scale(1.2);
+  border-color: #007bff;
+}
